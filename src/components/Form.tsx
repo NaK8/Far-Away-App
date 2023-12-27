@@ -18,6 +18,8 @@ const Form = ({ getList }: FormProps) => {
       id: Date.now(),
     };
     getList(itemData);
+    setDescription("");
+    setQuantity(1);
   }
   return (
     <form className="add-form" onSubmit={handleForm}>
