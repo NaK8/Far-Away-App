@@ -22,26 +22,29 @@ const Form = ({ getList }: FormProps) => {
   return (
     <form className="add-form" onSubmit={handleForm}>
       <h3>What do you need for your 😍 trip?</h3>
-      <select
-        onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-          setQuantity(() => Number(e.target.value))
-        }
-        value={quantity}
-      >
-        {Array.from({ length: 20 }, (_, i) => (
-          <option key={i} value={i + 1}>
-            {i + 1}
-          </option>
-        ))}
-      </select>
-      <input
-        type="text"
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setDescription(() => e.target.value)
-        }
-        value={description}
-      />
-      <button>Add</button>
+      <div className="form">
+        <select
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+            setQuantity(() => Number(e.target.value))
+          }
+          value={quantity}
+        >
+          {Array.from({ length: 20 }, (_, i) => (
+            <option key={i} value={i + 1}>
+              {i + 1}
+            </option>
+          ))}
+        </select>
+        <input
+          required
+          type="text"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setDescription(() => e.target.value)
+          }
+          value={description}
+        />
+        <button>Add</button>
+      </div>
     </form>
   );
 };
