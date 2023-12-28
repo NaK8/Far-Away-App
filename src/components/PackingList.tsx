@@ -17,7 +17,7 @@ const PackingList = ({
 }: PackageProps) => {
   const [sortOrder, setSortOrder] = useState<string>("input");
   let sortedItems: ListType[] | undefined;
-
+  console.log(sortOrder);
   if (sortOrder === "input") sortedItems = ListItem;
   if (sortOrder === "descripiton")
     sortedItems = ListItem.slice().sort((a, b) =>
@@ -44,7 +44,7 @@ const PackingList = ({
       <div className="actions">
         <select
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            setSortOrder(() => e.currentTarget.value)
+            setSortOrder(e.currentTarget.value)
           }
           value={sortOrder}
         >
