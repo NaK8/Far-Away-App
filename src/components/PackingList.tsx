@@ -28,6 +28,8 @@ const PackingList = ({
       (a, b) => Number(b.packed) - Number(a.packed)
     );
 
+  if (sortOrder === "quantity")
+    sortedItems = ListItem.slice().sort((a, b) => a.quantity - b.quantity);
   return (
     <div className="list">
       <ul>
@@ -51,6 +53,7 @@ const PackingList = ({
           <option value="input">Sort by input order</option>
           <option value="descripiton">Sort by description</option>
           <option value="packed">Sort by packed status</option>
+          <option value="quantity">Sort by quantity</option>
         </select>
         <button onClick={clear}>Clear List</button>
       </div>

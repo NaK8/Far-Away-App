@@ -146,7 +146,7 @@ input[type="checkbox"] {
 }
 @media screen and (max-width: 500px) {
   h1 {
-    --h1: 2.5rem;
+    --h1: 3.5rem;
   }
   input {
     width: 200px;

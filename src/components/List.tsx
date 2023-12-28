@@ -17,7 +17,7 @@ const List = ({ list, deleted, packed }: ListProps) => {
 
   return (
     <li>
-      <input type="checkbox" onClick={checkBox} checked={list.packed} />
+      <input type="checkbox" onClick={checkBox} defaultChecked={list.packed} />
       <span style={list.packed ? { textDecoration: "line-through" } : {}}>
         {list.quantity} {list.description}
       </span>
